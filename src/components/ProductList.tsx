@@ -18,27 +18,29 @@ export default function ProductList() {
         )
         .map((product) => {
           return (
-            <ProductItem
-              className="rounded d-flex align-items-center mb-3 p-3"
-              style={{ gap: 15, cursor: "pointer" }}
-            >
-              <div
-                className="rounded d-flex align-items-center justify-content-center text-primary"
-                style={{
-                  height: 40,
-                  width: 40,
-                  backgroundColor: "rgba(var(--bs-primary-rgb), 0.1)",
-                }}
+            <a href={product.url} target="_blank">
+              <ProductItem
+                className="rounded d-flex align-items-center mb-3 p-3"
+                style={{ gap: 15, cursor: "pointer" }}
               >
-                <i className="fa fa-burger"></i>
-              </div>
-              <div>
-                <div className="fw-bold">{product.name}</div>
-                <div className="text-muted" style={{ fontSize: "0.8rem" }}>
-                  {toTitleCase(product.category)}
+                <div
+                  className="rounded d-flex align-items-center justify-content-center text-primary"
+                  style={{
+                    height: 40,
+                    width: 40,
+                    backgroundColor: "rgba(var(--bs-primary-rgb), 0.1)",
+                  }}
+                >
+                  <i className="fa fa-burger"></i>
                 </div>
-              </div>
-            </ProductItem>
+                <div>
+                  <div className="fw-bold">{product.name}</div>
+                  <div className="text-muted" style={{ fontSize: "0.8rem" }}>
+                    {toTitleCase(product.category)}
+                  </div>
+                </div>
+              </ProductItem>
+            </a>
           );
         })}
     </div>
