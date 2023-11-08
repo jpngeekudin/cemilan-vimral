@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import ShopeeIcon from "../icons/ShopeeIcon";
 
 export default function Header() {
   const [snsList] = useState([
-    { icon: "fa-brands fa-tiktok", url: "https://tiktok.com/" },
-    { icon: "fa-brands fa-instagram", url: "https://instagram.com/" },
-    { icon: "fa fa-shop", url: "https://tokopedia.com/" },
+    {
+      icon: "fa-brands fa-tiktok",
+      url: "https://tiktok.com/",
+      iconComponent: null,
+    },
+    {
+      icon: "fa-brands fa-instagram",
+      url: "https://instagram.com/",
+      iconComponent: null,
+    },
+    { icon: null, url: "https://shopee.co.id/", iconComponent: ShopeeIcon },
   ]);
 
   return (
@@ -36,7 +45,11 @@ export default function Header() {
                   width: 40,
                 }}
               >
-                <i className={classNames(sns.icon)}></i>
+                {sns.iconComponent ? (
+                  <sns.iconComponent />
+                ) : (
+                  <i className={classNames(sns.icon)}></i>
+                )}
               </div>
             </a>
           );
