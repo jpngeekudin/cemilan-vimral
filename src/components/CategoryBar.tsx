@@ -35,7 +35,7 @@ export default function CategoryBar() {
               dispatch(selectCategory(category));
             }}
           >
-            {toTitleCase(category)}
+            {toTitleCase(category.name)}
           </CategoryItem>
         );
       })}

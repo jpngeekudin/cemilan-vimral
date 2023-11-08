@@ -1,6 +1,7 @@
 import React from "react";
 import ProductList from "../components/ProductList";
 import CategoryBar from "../components/CategoryBar";
+import Header from "../components/Header";
 
 export default function HomePage() {
   return (
@@ -8,14 +9,7 @@ export default function HomePage() {
       className="container bg-white p-3"
       style={{ minHeight: "100vh", maxWidth: 480 }}
     >
-      <div
-        className="rounded text-center p-5 mb-3"
-        style={{ backgroundColor: "rgba(var(--bs-primary-rgb), 0.1)" }}
-      >
-        <div className="fw-bold text-primary" style={{ fontSize: "1.5rem" }}>
-          Cemilan Vimral
-        </div>
-      </div>
+      <Header />
       <div className="mb-3">
         <CategoryBar />
       </div>

@@ -1,7 +1,7 @@
-import { CategoryType } from "./category.interface";
+import { ICategory } from "./category.interface";
 
 export interface IProduct {
   name: string;
-  category: CategoryType;
-  url: string,
+  category: ICategory;
+  url: string;
 }

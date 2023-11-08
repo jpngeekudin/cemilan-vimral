@@ -1,3 +1,4 @@
-import { categories } from "../configs/category.config";
-
-export type CategoryType = typeof categories[number];
+export interface ICategory {
+  name: string;
+  icon: string;
+}
