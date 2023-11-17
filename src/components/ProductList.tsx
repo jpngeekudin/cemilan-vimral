@@ -7,16 +7,24 @@ import { toTitleCase } from "../helpers/string.helper";
 import classNames from "classnames";
 
 export default function ProductList() {
-  const { selectedCategory } = useSelector(
+  const { selectedCategory, search } = useSelector(
     (state: RootState) => state.productReducer
   );
 
   return (
     <div>
       {products
-        .filter((p) =>
-          !selectedCategory ? true : p.category.name === selectedCategory.name
-        )
+        .filter((p) => {
+          const isCategoryFiltered = !selectedCategory
+            ? true
+            : p.category.name === selectedCategory.name;
+
+          const isSearchFiltered = p.name
+            .toLowerCase()
+            .includes(search.toLowerCase());
+            
+          return isCategoryFiltered && isSearchFiltered;
+        })
         .map((product) => {
           return (
             <a href={product.url} target="_blank">

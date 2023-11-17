@@ -3,6 +3,7 @@ import { ICategory } from "../../interfaces/category.interface";
 
 const initialState = {
   selectedCategory: null as ICategory | null,
+  search: "",
 };
 
 export const productSlice = createSlice({
@@ -12,8 +13,11 @@ export const productSlice = createSlice({
     selectCategory: (state, { payload }: { payload: ICategory | null }) => {
       state.selectedCategory = payload;
     },
+    setSearch: (state, { payload }: { payload: string }) => {
+      state.search = payload;
+    },
   },
 });
 
-export const { selectCategory } = productSlice.actions;
+export const { selectCategory, setSearch } = productSlice.actions;
 export default productSlice.reducer;
