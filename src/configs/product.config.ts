@@ -8,28 +8,21 @@ const getCategory = (name: string): ICategory => {
 
 export const products: IProduct[] = [
   {
-    name: "Selai Stroberi",
-    category: getCategory("selai"),
-    url: "https://tokopedia.com/",
+    name: "Collins Crunchy 350g",
+    category: getCategory("collins"),
+    url: "https://shope.ee/7zm00TzCOb",
+    location: 'bandung',
   },
   {
-    name: "Susu Kambing",
-    category: getCategory("minuman"),
-    url: "https://tokopedia.com/",
+    name: "Collins Choco Crunchy 1kg",
+    category: getCategory("collins"),
+    url: "https://shope.ee/3Agaig7VJ7",
+    location: 'bandung',
   },
   {
-    name: "Coklat Batang",
-    category: getCategory("permen"),
-    url: "https://tokopedia.com/",
-  },
-  {
-    name: "Sosis",
-    category: getCategory("makanan"),
-    url: "https://tokopedia.com/",
-  },
-  {
-    name: "Telor Naga Rebus",
-    category: getCategory("makanan"),
-    url: "https://tokopedia.com/",
+    name: "Collins Dip Glaze 1kg",
+    category: getCategory("collins"),
+    url: "https://shope.ee/1qBMfcxDgu",
+    location: 'bandung'
   },
 ];

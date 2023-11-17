@@ -4,7 +4,7 @@ import { products } from "../configs/product.config";
 import { useSelector } from "react-redux";
 import { RootState } from "../stores/store";
 import { toTitleCase } from "../helpers/string.helper";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 export default function ProductList() {
   const { selectedCategory } = useSelector(
@@ -32,12 +32,26 @@ export default function ProductList() {
                     backgroundColor: "rgba(var(--bs-primary-rgb), 0.1)",
                   }}
                 >
-                  <i className={classNames('fa', product.category.icon)}></i>
+                  <i className={classNames("fa", product.category.icon)}></i>
                 </div>
                 <div>
                   <div className="fw-bold">{product.name}</div>
-                  <div className="text-muted" style={{ fontSize: "0.8rem" }}>
-                    {toTitleCase(product.category.name)}
+                  <div
+                    className="d-flex align-items-center"
+                    style={{ gap: 10 }}
+                  >
+                    <div
+                      className="fw-bold text-primary"
+                      style={{ fontSize: "0.8rem" }}
+                    >
+                      {toTitleCase(product.location)}
+                    </div>
+                    <div className="text-muted" style={{ fontSize: "0.8rem" }}>
+                      /
+                    </div>
+                    <div className="text-muted" style={{ fontSize: "0.8rem" }}>
+                      {toTitleCase(product.category.name)}
+                    </div>
                   </div>
                 </div>
               </ProductItem>
