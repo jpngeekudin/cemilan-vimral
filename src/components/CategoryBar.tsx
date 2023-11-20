@@ -25,9 +25,10 @@ export default function CategoryBar() {
       >
         All
       </CategoryItem>
-      {categories.map((category) => {
+      {categories.map((category, i) => {
         return (
           <CategoryItem
+            key={i}
             className={classNames("rounded", "px-3", "py-2", {
               active: category === selectedCategory,
             })}

@@ -22,12 +22,16 @@ export default function ProductList() {
           const isSearchFiltered = p.name
             .toLowerCase()
             .includes(search.toLowerCase());
-            
-          return isCategoryFiltered && isSearchFiltered;
+
+          const isLocationFiltered = p.location
+            ?.toLowerCase()
+            .includes(search.toLowerCase());
+
+          return isCategoryFiltered && (isSearchFiltered || isLocationFiltered);
         })
-        .map((product) => {
+        .map((product, i) => {
           return (
-            <a href={product.url} target="_blank">
+            <a key={i} href={product.url} target="_blank">
               <ProductItem
                 className="rounded d-flex align-items-center mb-3 p-3"
                 style={{ gap: 15, cursor: "pointer" }}
@@ -48,15 +52,22 @@ export default function ProductList() {
                     className="d-flex align-items-center"
                     style={{ gap: 10 }}
                   >
-                    <div
-                      className="fw-bold text-primary"
-                      style={{ fontSize: "0.8rem" }}
-                    >
-                      {toTitleCase(product.location)}
-                    </div>
-                    <div className="text-muted" style={{ fontSize: "0.8rem" }}>
-                      /
-                    </div>
+                    {!!product.location && (
+                      <>
+                        <div
+                          className="fw-bold text-primary"
+                          style={{ fontSize: "0.8rem" }}
+                        >
+                          {toTitleCase(product.location)}
+                        </div>
+                        <div
+                          className="text-muted"
+                          style={{ fontSize: "0.8rem" }}
+                        >
+                          /
+                        </div>
+                      </>
+                    )}
                     <div className="text-muted" style={{ fontSize: "0.8rem" }}>
                       {toTitleCase(product.category.name)}
                     </div>
