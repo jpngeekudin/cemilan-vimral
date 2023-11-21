@@ -19,6 +19,10 @@ export default function HomePage() {
           <CategoryBar />
         </div>
         <ProductList />
+
+        <div className="text-center">
+          <img src="https://www.cutercounter.com/hits.php?id=hvxonnpx&nd=6&style=5" />
+        </div>
       </div>
     </div>
   );
