@@ -141,6 +141,18 @@ export const products: IProduct[] = [
     url: "https://shope.ee/508WalIbyA",
     location: 'manado'
   },
+  {
+    name: "Coklat Collins Crunchy 350g",
+    category: getCategory("collins"),
+    url: "https://shope.ee/8f1t2slMa9",
+    location: 'pekanbaru riau'
+  },
+  {
+    name: "Coklat Collins Crunchy 1kg",
+    category: getCategory("collins"),
+    url: "https://shope.ee/2q4667Hidu",
+    location: 'pekanbaru riau'
+  },
 
   // herbal
   {
